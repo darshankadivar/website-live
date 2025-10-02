@@ -1,6 +1,5 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom'
-import Navbar from './Component/Navbar'
 import Slider from './Component/Slider'
 import Slider1 from './Component/Slider1'
 import Video from './Component/Video'
@@ -14,12 +13,13 @@ import AllServices from './Component/AllServices'
 import Footer from './Component/Footer'
 import Login from './Component/Login/Login'
 import SignUp from './Component/Login/SignUp'
+import Navbar from './component/Navbar'
 
 export default function App() {
   return (
     <BrowserRouter>
       <div>
-        <Navbar />
+        <Navbar/>
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
