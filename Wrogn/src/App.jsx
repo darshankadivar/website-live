@@ -1,46 +1,23 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom'
-import Slider from './components/Slider'
-import Slider1 from './components/Slider1'
-import Video from './components/Video'
-import TrendingC from './components/TrendingC'
-import TShirt from './components/TShirt'
-import BestSeller from './components/BestSeller'
-import WRWrogn from './components/WRWrogn'
-import WrognWP from './components/WrognWP'
-import WStore from './components/WStore'
-import AllServices from './components/AllServices'
-import Footer from './components/Footer'
-import Login from './components/Login/Login'
-import SignUp from './components/Login/SignUp'
-import Navbar from './components/Navbar'
+import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
-export default function App() {
+import SignIn from './component/SignIn';
+import Register from './component/Register';
+import HomePage from './component/HomePage';
+
+function App() {
+  const isAuth = JSON.parse(localStorage.getItem("auth"));
+
   return (
     <BrowserRouter>
-      <div>
-        <Navbar/>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/" element={
-            <>
-              <Slider />
-              <Slider1 />
-              <Video />
-              <TrendingC />
-              <TShirt />
-              <BestSeller />
-              <WRWrogn />
-              <WrognWP />
-              <WStore />
-              <AllServices />
-              <Footer />
-            </>
-          } />
-        </Routes>
-
-      </div>
+      <Routes>
+        <Route path="/" element={<Register />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/homepage" element={isAuth ? <HomePage /> : <Navigate to="/signin" />}/>
+        <Route path="*" element={<Navigate to="/signin" />} />
+      </Routes>
     </BrowserRouter>
-  )
+  );
 }
+
+export default App;
