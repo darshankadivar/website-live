@@ -1,171 +1,93 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
+    return (
+        <div>
 
-  return (
-    <nav className="bg-white shadow-md font-display sticky   z-50">
-      <div className="max-w-full px-4 md:px-10 lg:px-10 xl:px-20 py-4 flex items-center justify-around">
-        {/* Logo */}
-        <div className=''>
-          <img className="w-[50px] relative z-30" src="logo_icon_1_bd4a99ba-1c20-43de-81ff-1f5fb0685b8e.svg" alt="Logo" />
+            {/* Full NavBar */}
+            <div className="w-full fixed z-1">
+                {/* BlackLine */}
+                <div className="relative overflow-hidden bg-black py-1.5">
+                    <div className="flex whitespace-nowrap gap-15 text-[11px] text-white font-semibold animate-marquee">
+                        <span>END OF SEASON SALE - UPTO 50% OFF</span>
+                        <span>END OF SEASON SALE - UPTO 50% OFF</span>
+                        <span>END OF SEASON SALE - UPTO 50% OFF</span>
+                        <span>END OF SEASON SALE - UPTO 50% OFF</span>
+                        <span>END OF SEASON SALE - UPTO 50% OFF</span>
+                        <span>END OF SEASON SALE - UPTO 50% OFF</span>
+                        <span>END OF SEASON SALE - UPTO 50% OFF</span>
+                        <span>END OF SEASON SALE - UPTO 50% OFF</span>
+                        <span>END OF SEASON SALE - UPTO 50% OFF</span>
+                        <span>END OF SEASON SALE - UPTO 50% OFF</span>
+                        <span>END OF SEASON SALE - UPTO 50% OFF</span>
+                        <span>END OF SEASON SALE - UPTO 50% OFF</span>
+                        <span>END OF SEASON SALE - UPTO 50% OFF</span>
+                        <span>END OF SEASON SALE - UPTO 50% OFF</span>
+                        <span>END OF SEASON SALE - UPTO 50% OFF</span>
+                        <span>END OF SEASON SALE - UPTO 50% OFF</span>
+                    </div>
+                </div>
+                {/* BlackLine */}
+
+                {/* nav */}
+                <nav className="bg-white px-20 flex justify-between text-xs py-5">
+                    <div className="flex gap-9 font-semibold items-center">
+                        <img src="https://wrogn.com/cdn/shop/files/logo_icon_1_bd4a99ba-1c20-43de-81ff-1f5fb0685b8e.svg?v=1736489168&width=50" alt="" className="w-12" />
+                        <a href="#EOSS">EOSS</a>
+                        <a href="#EXCLUSIVE">EXCLUSIVE</a>
+                        <a href="#ALL PRODUCTS">ALL PRODUCTS</a>
+                        <a href="#TOPWEAR">TOPWEAR</a>
+                        <a href="#BOTTOMWEAR">BOTTOMWEAR</a>
+                        <a href="#FOOTWEAR">FOOTWEAR</a>
+                        <a href="#FRESH ARRIVALS">FRESH ARRIVALS</a>
+                        <a href="#ESSENTIALS">ESSENTIALS</a>
+                    </div>
+                    <div className="flex items-center gap-5 font-semibold">
+                        <div className="border-1 border-gray-400 rounded-xl p-3 flex items-center gap-3 w-[144px]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 512 512"><path fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="32" d="M221.09 64a157.09 157.09 0 1 0 157.09 157.09A157.1 157.1 0 0 0 221.09 64Z" /><path fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448" /></svg>
+                            <input type="search" placeholder="SEARCH" className="w-[88px] outline-none" />
+                        </div>
+
+                        {/* Icon Hover */}
+                        <div className="flex justify-center items-center">
+                            <div className="relative group">
+                                <div className="flex items-center space-x-1 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
+                                    <svg width="20" height="20" viewBox="0 0 27 27 ">
+                                        <path d="M22.9129 12.935L13.7571 23.0474C13.5348 23.2929 13.1284 23.1084 13.1669 22.7794L14.0816 14.9731H10.6991C10.4034 14.9731 10.2484 14.6219 10.4478 14.4035L20.3133 3.59739C20.5589 3.32834 20.9984 3.58134 20.8891 3.92887L18.2354 12.3664H22.6607C22.9557 12.3664 23.1109 12.7163 22.9129 12.935Z" fill="#FEA203" />
+                                        <path d="M16.6079 5.35819C16.4805 5.1933 16.3421 5.03582 16.1932 4.8869C15.2702 3.96387 14.0183 3.44531 12.7129 3.44531C11.4075 3.44531 10.1556 3.96387 9.2326 4.8869C8.30957 5.80993 7.79102 7.06183 7.79102 8.36719C7.79102 9.67255 8.30957 10.9244 9.2326 11.8475C9.48368 12.0986 9.75909 12.3197 10.0533 12.5086L11.0235 11.4503C10.7335 11.2914 10.4649 11.0911 10.227 10.8531C9.56766 10.1938 9.19727 9.29959 9.19727 8.36719C9.19727 7.43479 9.56766 6.54057 10.227 5.88127C10.8863 5.22196 11.7805 4.85156 12.7129 4.85156C13.6453 4.85156 14.5395 5.22196 15.1988 5.88127C15.3636 6.04604 15.5103 6.22549 15.6377 6.41654L16.6079 5.35819ZM20.6413 18.6497L19.6746 19.7132C20.1676 20.4122 20.4473 21.2264 20.4473 22.0781V23.8359C20.4473 24.2243 20.7621 24.5391 21.1504 24.5391C21.5387 24.5391 21.8535 24.2243 21.8535 23.8359V22.0781C21.8535 20.7863 21.4016 19.6103 20.6413 18.6497ZM12.3111 17.5078H10.3026C7.27113 17.5078 4.97852 19.6394 4.97852 22.0781V23.8359C4.97852 24.2243 4.66372 24.5391 4.27539 24.5391C3.88707 24.5391 3.57227 24.2243 3.57227 23.8359V22.0781C3.57227 18.6922 6.67684 16.1016 10.3026 16.1016H12.4885L12.3111 17.5078Z" fill="black" />
+                                    </svg>
+                                </div>
+
+                                <div className="absolute w-40 bg-white rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <div className="p-2">
+                                        <p className="text-xs text-gray-500">PROFILE</p>
+                                    </div>
+                                    <div>
+                                        <a href="#ACCOUNT" className="block px-3 py-2 text-sm hover:bg-gray-50">ACCOUNT</a>
+                                        <a href="#ORDERS" className="block px-3 py-2 text-sm hover:bg-gray-50">ORDERS</a>
+                                        <a href="#FINDSTORES" className="block px-3 py-2 text-sm hover:bg-gray-50">FIND STORES</a>
+                                    </div>
+                                    <div className="p-2 flex gap-2">
+                                        <Link to="/signup" className="w-full py-1 text-sm border text-center rounded hover:bg-gray-100 cursor-pointer">Sign Up</Link>
+                                        <Link to="/login" className="w-full py-1 text-sm border text-center rounded hover:bg-gray-100 cursor-pointer">Log In</Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* Icon Hover */}
+
+                        {/* Cart ICon */}
+                        <div className="flex items-center space-x-1 cursor-pointer p-2 hover:bg-gray-100 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" data-testid="icon-cart-svg-header"><path d="M16.3242 8.93066V7.43066C16.3242 6.4361 15.9291 5.48228 15.2259 4.77901C14.5226 4.07575 13.5688 3.68066 12.5742 3.68066C11.5796 3.68066 10.6258 4.07575 9.92255 4.77901C9.21929 5.48228 8.8242 6.4361 8.8242 7.43066V8.93066M20.1802 9.93766L21.4432 20.9377C21.5132 21.6027 20.9932 22.1807 20.3242 22.1807H4.8242C4.66641 22.1808 4.51035 22.1478 4.36615 22.0837C4.22196 22.0197 4.09285 21.926 3.98723 21.8087C3.8816 21.6915 3.80182 21.5534 3.75306 21.4033C3.7043 21.2532 3.68765 21.0946 3.7042 20.9377L4.9682 9.93766C4.99736 9.66122 5.12783 9.40537 5.33445 9.21942C5.54108 9.03348 5.80923 8.93061 6.0872 8.93066H19.0612C19.6372 8.93066 20.1202 9.36566 20.1802 9.93766Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                        </div>
+                        {/* Cart ICon */}
+
+                    </div>
+                </nav>
+            </div>
+            {/* Full Navbar */}
+
         </div>
-
-        {/* Hamburger */}
-        <div className="lg:hidden">
-          <button onClick={() => setOpen(!open)} className="text-gray-800 focus:outline-none">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2"
-              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
-
-        {/* Menu */}
-        <ul className="hidden lg:flex items-center gap-6 uppercase text-[13px] font-bold  relative z-40">
-          <li><a href="#">eoss</a></li>
-          <li><a href="#">exclusive</a></li>
-
-          {/* All Products Dropdown */}
-          <li className="relative group">
-            <a href="#" className="hover:text-black">all products</a>
-            <div className="absolute top-full left-0 mt-0 bg-white text-black p-13 shadow-lg rounded-2xl w-[450px] hidden group-hover:block z-50">
-              <div className="grid grid-cols-2 gap-x-10 gap-y-7 text-sm uppercase font-medium">
-                {["View All", "Sweatshirts", "Spring Summer 25", "Jackets", "Bestsellers", "Sweaters", "Fresh Arrivals", "Shorts", "Shirts", "Polos", "Tshirts", "Essentials", "Jeans", "Footwear", "Cargos & Joggers"].map(item => (
-                  <a key={item} href="#" className="hover:underline hover:text-[#EF3C74]">{item}</a>
-                ))}
-              </div>
-            </div>
-          </li>
-
-          {/* Topwear Dropdown */}
-          <li className="relative group">
-            <a href="#" className="hover:text-black uppercase">Topwear</a>
-            <div className="absolute top-full left-0 mt-0 bg-white text-black p-10 shadow-lg rounded-2xl w-[300px] hidden group-hover:block z-50">
-              <div className="grid grid-cols-2 gap-x-10 mt-5 gap-y-6 text-sm uppercase font-medium">
-                {["View All", "Polos", "Bestsellers", "Jackets", "Fresh Arrivals", "Sweatshirts", "Shirts", "Sweaters", "Tshirts"].map(item => (
-                  <a key={item} href="#" className="hover:underline hover:text-[#EF3C74]">{item}</a>
-                ))}
-              </div>
-            </div>
-          </li>
-
-          {/* Remaining Menu Items */}
-          <li className="relative group">
-            <a href="#" className="hover:text-black uppercase">Bottomwear</a>
-            <div className="absolute top-full left-0 mt-0 bg-white text-black p-10 shadow-lg rounded-2xl w-[400px] hidden group-hover:block z-50">
-              <div className="grid grid-cols-2 gap-x-10 gap-y-5 mt-5 text-sm uppercase font-medium">
-                {["View All", "Jeans", "Bestsellers", "Cargos & Joggers", "Fresh Arrivals", "Shorts"].map(item => (
-                  <a key={item} href="#" className="hover:underline hover:text-[#EF3C74]">{item}</a>
-                ))}
-              </div>
-            </div>
-          </li>
-
-          <li className="relative group">
-            <a href="#" className="hover:text-black uppercase">Footwear</a>
-            <div className="absolute top-full left-0 mt-0 bg-white text-black p-10 shadow-lg rounded-2xl w-[300px] hidden group-hover:block z-50">
-              <div className="grid grid-cols-2 gap-x-10 gap-y-5 mt-5 text-sm uppercase font-medium">
-                {["View All", "Sliders", "Sneakers", "Athleisure"].map(item => (
-                  <a key={item} href="#" className="hover:underline hover:text-[#EF3C74]">{item}</a>
-                ))}
-              </div>
-            </div>
-          </li>
-
-          <li className="relative group">
-            <a href="#" className="hover:text-black uppercase">Fresh Arrivals</a>
-            <div className="absolute top-full left-0 mt-0 bg-white text-black p-10 shadow-lg rounded-2xl w-[300px] hidden group-hover:block z-50">
-              <div className="grid grid-cols-2 gap-x-10 gap-y-5 mt-5 text-sm uppercase font-medium">
-                {["T-Shirts", "Cargos", "Shirts", "Polos", "Jeans"].map(item => (
-                  <a key={item} href="#" className="hover:underline hover:text-[#EF3C74]">{item}</a>
-                ))}
-              </div>
-            </div>
-          </li>
-
-
-          <li className="relative group">
-            <a href="#" className="hover:text-black uppercase">Essentials</a>
-            <div className="absolute top-full left-0 mt-0 bg-white text-black p-7 shadow-lg rounded-2xl w-[240px] hidden group-hover:block z-50">
-              <div className="grid grid-cols-2 gap-x-10 gap-y-5 mt-5 text-sm uppercase font-medium">
-                {["View All", "Perfume", "Caps", "Socks", "Trunks", "Briefs"].map(item => (
-                  <a key={item} href="#" className="hover:underline hover:text-[#EF3C74]">{item}</a>
-                ))}
-              </div>
-            </div>
-          </li>
-
-        </ul>
-
-        {/* Search + Icons */}
-        <div className="flex items-center gap-3 ms-30 z-0 relative">
-          <div className="hidden lg:block relative">
-            <div className="flex items-center border border-gray-400 px-2 py-3 rounded-lg bg-white transition-all duration-300 overflow-hidden">
-              <i className="fa-solid fa-magnifying-glass px-2 text-sm shrink-0"></i>
-              <input
-                type="search"
-                placeholder="Search"
-                className="w-[120px] outline-none text-[12px] bg-white transition-all duration-300"
-              />
-
-            </div>
-          </div>
-
-          {/* Profile */}
-              <div className="relative group">
-            <div className="p-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
-                <path fill="currentColor" d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 2a2 2 0 0 0-2 2a2 2 0 0 0 2 2a2 2 0 0 0 2-2a2 2 0 0 0-2-2m0 7c2.67 0 8 1.33 8 4v3H4v-3c0-2.67 5.33-4 8-4m0 1.9c-2.97 0-6.1 1.46-6.1 2.1v1.1h12.2V17c0-.64-3.13-2.1-6.1-2.1" />
-              </svg>
-            </div>
-            <div className="absolute right-0 mt-1 w-80 bg-white rounded-lg shadow-lg transform opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 z-30 pointer-events-none group-hover:pointer-events-auto px-6 py-4">
-              <span className="uppercase text-sm text-gray-500 mb-4 block">Profile</span>
-              <Link to="/profile" className="flex items-center gap-2 mb-4 cursor-pointer hover:text-purple-300 transition-all">
-                <svg width="20" height="24" fill="none" stroke="currentColor">
-                  <circle cx="12" cy="6" r="4" />
-                  <path d="M20 17.5c0 2.485 0 4.5-8 4.5s-8-2.015-8-4.5S7.582 13 12 13s8 2.015 8 4.5Z" />
-                </svg>
-                <span className="uppercase text-md">Account</span>
-              </Link>
-              <a href="#" className="flex items-center gap-2 mb-4">
-                <svg width="24" height="24" fill="none" stroke="currentColor">
-                  <path d="M5.5 12.1c0-1.697 0-2.546.527-3.073S7.403 8.5 9.1 8.5h5.8c1.697 0 2.546 0 3.073.527s.527 1.376.527 3.073v2.4c0 2.828 0 4.243-.879 5.121c-.878.879-2.293.879-5.121.879h-1c-2.828 0-4.243 0-5.121-.879C5.5 18.743 5.5 17.328 5.5 14.5z" />
-                </svg>
-                <span className="uppercase text-md hover:text-purple-300 mt-1.5 transition-all">Orders</span>
-              </a>
-              <a href="#" className="flex items-center gap-2 mb-6">
-                <svg width="24" height="24" fill="currentColor">
-                  <path d="m18.36 9l.6 3H5.04l.6-3zM20 4H4v2h16zm0 3H4l-1 5v2h1v6h10v-6h4v6h2v-6h1v-2zM6 18v-4h6v4z" />
-                </svg>
-                <span className="uppercase text-md hover:text-purple-300 transition-all">Find stores</span>
-              </a>
-              <Link to="/login" className="block w-full border border-gray-300 px-8 py-3 rounded-md uppercase text-center cursor-pointer hover:bg-gray-100">
-                Login
-              </Link>
-            </div>
-          </div>
-
-          {/* Cart Icon */}
-          <div className='cursor-pointer'>
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512 512">
-              <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="32"
-                d="M80 176a16 16 0 0 0-16 16v216c0 30.24 25.76 56 56 56h272c30.24 0 56-24.51 56-54.75V192a16 16 0 0 0-16-16Zm80 0v-32a96 96 0 0 1 96-96h0a96 96 0 0 1 96 96v32" />
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      {open && (
-        <div className="lg:hidden px-4 pb-4 space-y-4 uppercase text-sm font-bold">
-          {["eoss", "exclusive", "all products", "topwear", "footwear", "fresh arrivals", "essentials"].map(item => (
-            <a key={item} href="#" className="block">{item}</a>
-          ))}
-        </div>
-      )}
-    </nav>
-  )
+    )
 }
