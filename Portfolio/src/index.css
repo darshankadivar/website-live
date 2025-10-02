@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+html{
+  scroll-behavior: smooth;
+}
+
+@keyframes spinBorder {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spinBorder {
+  animation: spinBorder 3s linear infinite;
+}
